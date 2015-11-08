@@ -39,9 +39,10 @@ public class WorkflowService extends BaseService {
      */
     public void createWorkflowResponse(
         final IWorkflowListener   listener,
+        final WorkflowType        workflowType,
         final WorkflowResponseDto workflowResponseDto) {
 
-        workflowServiceImpl.createWorkflowResponse(listener, workflowResponseDto);
+        workflowServiceImpl.createWorkflowResponse(listener, workflowType, workflowResponseDto);
     }
 
 }

@@ -40,6 +40,7 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
 
     private WorkflowActivity  activity;
     private WorkflowPresenter presenter;
+    private WorkflowType      whichWorkflowIsDisplayed;
     private WorkflowTree      workflowTree;
 
     private ProgressIndicator progressIndicator;
@@ -54,15 +55,18 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
 
         presenter = new WorkflowPresenter(this);
 
-        ButtonUtils.setEnabled(false, buttonComplete);
+        //        ButtonUtils.setEnabled(false, buttonComplete);
     }
 
     @OnClick(R.id.buttonMedicalHistory) public void medicalHistoryOnClick() {
-        presenter.getWorkflow(WorkflowType.MEDICAL_HISTORY);
+        whichWorkflowIsDisplayed = WorkflowType.MEDICAL_HISTORY;
+        presenter.getWorkflow(whichWorkflowIsDisplayed);
     }
 
     @OnClick(R.id.buttonPersonalInfo) public void personalInfoOnClick() {
         //TODO:        presenter.getWorkflow(WorkflowType.PERSONAL_INFO);
+        whichWorkflowIsDisplayed = WorkflowType.PERSONAL_INFO;
+        presenter.getWorkflow(whichWorkflowIsDisplayed);
     }
 
 
@@ -99,7 +103,7 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
 
         //DEBUG:                WorkflowTree.PrettyPrinter.print(workflowTree, 0);
 
-        presenter.completeWorkflow(isCompleted, response);
+        presenter.completeWorkflow(isCompleted, whichWorkflowIsDisplayed, response);
     }
 
     public void setWorkflowCompleted(final boolean isCompleted) {
@@ -132,6 +136,8 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
 
 
     private void setupInitialWorkflow(WorkflowDto workflow) {
+
+        inner.removeAllViews();
 
         workflowTree = WorkflowTree.createStep(this, null, workflow);
 

@@ -34,13 +34,13 @@ public class WorkflowPresenter implements IWorkflowListener {
     }
 
 
-    public void completeWorkflow(final boolean isCompleted, final WorkflowResponseDto response) {
+    public void completeWorkflow(final boolean             isCompleted,
+                                 final WorkflowType        workflowType,
+                                 final WorkflowResponseDto response) {
 
         if (isCompleted && response != null) {
-            workflowService.createWorkflowResponse(this, response);
+            createWorkflowResponse(workflowType, response);
         }
-
-        activity.setWorkflowCompleted(isCompleted);
     }
 
     //-------------------------------------------------------
@@ -64,9 +64,10 @@ public class WorkflowPresenter implements IWorkflowListener {
     //-------------------------------------------------------
     //  Send workflow response to the server...
     //-------------------------------------------------------
-    public void createWorkflowResponse(final WorkflowResponseDto response) {
+    public void createWorkflowResponse(final WorkflowType        workflowType,
+                                       final WorkflowResponseDto response) {
         activity.showProgressIndicator();
-        workflowService.createWorkflowResponse(this, response);
+        workflowService.createWorkflowResponse(this, workflowType, response);
     }
 
     @Override public void putWorkflowResponseSuccess(final WorkflowResponseDto savedResponse) {

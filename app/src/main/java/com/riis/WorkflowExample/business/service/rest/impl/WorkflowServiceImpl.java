@@ -75,10 +75,12 @@ public class WorkflowServiceImpl extends BaseServiceImpl<WorkflowServiceRest> {
     }
 
 
-    public void createWorkflowResponse(final IWorkflowListener   listener,
-                                       final WorkflowResponseDto workflowResponse) {
+    public void createWorkflowResponse(
+        final IWorkflowListener   listener,
+        final WorkflowType        workflowType,
+        final WorkflowResponseDto workflowResponse) {
 
-        Subscription subscription = createWorkflowResponseCall(workflowResponse)
+        Subscription subscription = createWorkflowResponseCall(workflowType, workflowResponse)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(new Observer<WorkflowResponseDto>() {
@@ -99,6 +101,7 @@ public class WorkflowServiceImpl extends BaseServiceImpl<WorkflowServiceRest> {
     }
 
     private Observable<WorkflowResponseDto> createWorkflowResponseCall(
+        final WorkflowType        workflowType,
         final WorkflowResponseDto response) {
 
         return Observable.defer(new Func0<Observable<WorkflowResponseDto>>() {
@@ -108,7 +111,7 @@ public class WorkflowServiceImpl extends BaseServiceImpl<WorkflowServiceRest> {
 
                     try {
                         WorkflowResponseDto result =
-                            service.createWorkflowResponse(response);
+                            service.createWorkflowResponse(workflowType, response);
                         return Observable.just(result);
 
                     } catch (RetrofitError e) {

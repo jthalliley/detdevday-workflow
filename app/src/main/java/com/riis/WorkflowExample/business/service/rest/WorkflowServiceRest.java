@@ -25,10 +25,11 @@ public interface WorkflowServiceRest {
         @Path("workflowType") final WorkflowType workflowType
     );
 
-    @POST("/rest/workflow-responses")
+    @POST("/rest/workflow-responses/{workflowType}")
     @Headers({"Accept: application/json", "Pragma: no-cache", "Accept-Language: en-US"})
     public WorkflowResponseDto createWorkflowResponse(
-        @Body final WorkflowResponseDto workflowResponse
+        @Path("workflowType") final WorkflowType        workflowType,
+        @Body                 final WorkflowResponseDto workflowResponse
     );
 
 }
