@@ -1,0 +1,58 @@
+allprojects {
+  group = 'com.riis'
+  
+  apply plugin: 'maven'
+
+  repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+  }
+}
+
+buildscript {
+  repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+  }
+
+  ext {
+    libraries = [ 
+
+    // Unit Testing
+    'jUnit'                        : 'junit:junit:4.10',
+    'mockito'                      : 'org.mockito:mockito-core:2.0.31-beta',
+    'robolectric'                  : 'org.robolectric:robolectric:3.0',
+    'robolectricShadowsSupport'    : 'org.robolectric:shadows-support-v4:3.0',
+    'robolectricShadowsHttpclient' : 'org.robolectric:shadows-httpclient:3.0',
+    
+    // Networking, REST client, etc.
+    'okHttp'              : 'com.squareup.okhttp:okhttp:2.4.0',
+    'retrofit'            : 'com.squareup.retrofit:retrofit:1.9.0',
+    'rxAndroid'           : 'io.reactivex:rxandroid:1.0.1',
+    
+    // Time compuatations
+    'jodaTime' : 'joda-time:joda-time:2.8.1',
+
+    // UI field/method injection
+    'butterKnife' : 'com.jakewharton:butterknife:7.0.1',
+
+    // General (non-UI) dependency injection
+    'dagger'         : 'com.squareup.dagger:dagger:1.2.2',
+    'daggerCompiler' : 'com.squareup.dagger:dagger-compiler:1.2.2',
+    ]
+  }
+
+  
+  dependencies {
+    classpath 'com.android.tools.build:gradle:1.2.3'
+    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.7'
+  }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.5'
+}
+
+

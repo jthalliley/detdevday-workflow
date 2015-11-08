@@ -1,0 +1,221 @@
+<resources>
+
+    <style name="bigActionButton">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/big_button_text_color</item>
+        <item name="android:background">@color/big_button_background_color</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="actionButton">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center|center_vertical</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:background">@color/button_background_color</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="smallActionButton">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/small_button_text_color</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="listItemActionButton">
+        <item name="android:layout_marginTop">3dip</item>
+        <item name="android:layout_marginBottom">3dip</item>
+        <item name="android:layout_marginLeft">3dip</item>
+        <item name="android:layout_marginRight">3dip</item>
+        <item name="android:paddingLeft">9dip</item>
+        <item name="android:paddingRight">9dip</item>
+        <item name="android:layout_width">75dip</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <style name="fullActionButton">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">18dip</item>
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:background">@color/button_background_color</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="editText">
+        <item name="android:layout_marginTop">20dip</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_height">1dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="editTextNormal" parent="@style/editText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">1dip</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="editTextBox">
+        <item name="android:layout_marginTop">20dip</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_height">60dip</item>
+        <item name="android:singleLine">false</item>
+    </style>
+
+    <style name="textView">
+        <item name="android:layout_height">90dip</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="textViewLink">
+        <item name="android:layout_height">90dip</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_link_color</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="checkbox">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="sectionHeader">
+        <item name="android:textColor">@color/section_header_color</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginLeft">18dip</item>
+        <item name="android:layout_marginRight">18dip</item>
+        <item name="android:layout_marginTop">9dip</item>
+        <item name="android:layout_marginBottom">6dip</item>
+    </style>
+    
+    <style name="separator">
+        <item name="android:background">@color/separator_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dip</item>
+        <item name="android:layout_marginLeft">9dip</item>
+        <item name="android:layout_marginRight">9dip</item>
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:layout_marginBottom">2dip</item>
+    </style>
+    
+    <style name="mutedSeparator">
+        <item name="android:background">@color/muted_separator_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">3dip</item>
+        <item name="android:layout_marginRight">9dip</item>
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:layout_marginBottom">2dip</item>
+    </style>
+    
+    <style name="fullSeparator">
+        <item name="android:background">@color/full_separator_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dip</item>
+        <item name="android:layout_marginLeft">0dip</item>
+        <item name="android:layout_marginRight">0dip</item>
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:layout_marginBottom">2dip</item>
+    </style>
+    
+    <style name="fullMajorSeparator">
+        <item name="android:background">@color/full_major_separator_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">3dip</item>
+        <item name="android:layout_marginLeft">0dip</item>
+        <item name="android:layout_marginRight">0dip</item>
+        <item name="android:layout_marginTop">3dip</item>
+        <item name="android:layout_marginBottom">3dip</item>
+    </style>
+    
+    <style name="smallSeparator">
+        <item name="android:background">@color/separator_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">150dip</item>
+        <item name="android:layout_marginRight">150dip</item>
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:layout_marginBottom">2dip</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    
+    <style name="smallVerticalSeparator">
+        <item name="android:background">@color/vertical_separator_color</item>
+        <item name="android:layout_width">2dip</item>
+        <item name="android:layout_marginLeft">18dip</item>
+        <item name="android:layout_marginRight">18dip</item>
+        <item name="android:layout_marginTop">18dip</item>
+        <item name="android:layout_marginBottom">18dip</item>
+    </style>
+    
+    <style name="terminator">
+        <item name="android:background">@color/terminator_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">9dip</item>
+        <item name="android:layout_marginRight">9dip</item>
+        <item name="android:layout_marginTop">18dip</item>
+        <item name="android:layout_marginBottom">18dip</item>
+    </style>
+    
+    <style name="settingsPage">
+        <item name="android:background">@color/page_background</item>
+    </style>
+
+	<style name="workflowPage" parent="settingsPage">
+	</style>
+	
+    <style name="dynMultiSelectCheckBox">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:layout_marginRight">18dip</item>
+    </style>
+
+    <style name="dynToggle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:layout_marginRight">18dip</item>
+    </style>
+
+    <style name="dynDatePicker">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:layout_marginRight">18dip</item>
+    </style>
+
+    <style name="dynCalendar">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:layout_marginRight">18dip</item>
+    </style>
+
+    <style name="dynTextTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:layout_marginRight">3dip</item>
+    </style>
+
+    <style name="dynTextField">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="dynTextBox" parent="editTextBox">
+<!-- needed?        <item name="android:layout_marginTop">0dip</item> !-->
+    </style>
+
+	<style name="spinner" parent="@style/textView">
+    </style>
+
+
+</resources>

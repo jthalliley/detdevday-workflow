@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.riis.WorkflowExample" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>  <!-- To see if wifi is active !-->
+    <uses-permission android:name="android.permission.INTERNET"/>              <!-- To call APIs !-->
+    
+    <application android:name=".WorkflowExampleApplication"
+                 android:label="@string/app_name"
+        >
+
+        <activity android:name=".activity.WorkflowActivity"
+                  android:label="@string/title_activity_workflowExample"
+                  android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action   android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" /> 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<integer name="httpConnectionTimeoutInSeconds">20</integer>
+	<integer name="httpReadTimeoutInSeconds">20</integer>
+	<integer name="httpWriteTimeoutInSeconds">20</integer>
+
+</resources>
