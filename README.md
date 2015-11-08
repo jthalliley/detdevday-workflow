@@ -1,8 +1,8 @@
-# ddd-workflow project
+# detdevday-workflow project
 
 This is an example of traversing and displaying a dynamic workflow, gathering answers, and saving the result.
 
-Workflows are dynamically fetched from a server, and displayed dynamically on the screen as the user answers questions.  Once completed, the user's responses are sent back to the server for storage.
+Workflows are dynamically fetched from a server, and displayed dynamically on the Android tablet screen as the user answers questions.  Once completed, the user's responses are sent back to the server for storage.
 
 Presented at DetroitDevDay, November 14, 2015, by uhhhh me, Tom Halliley.
 
