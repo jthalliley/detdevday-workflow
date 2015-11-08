@@ -172,9 +172,9 @@
         <item name="android:background">@color/page_background</item>
     </style>
 
-	<style name="workflowPage" parent="settingsPage">
-	</style>
-	
+    <style name="workflowPage" parent="settingsPage">
+    </style>
+    
     <style name="dynMultiSelectCheckBox">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/text_color</item>
@@ -182,18 +182,6 @@
     </style>
 
     <style name="dynToggle">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/text_color</item>
-        <item name="android:layout_marginRight">18dip</item>
-    </style>
-
-    <style name="dynDatePicker">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/text_color</item>
-        <item name="android:layout_marginRight">18dip</item>
-    </style>
-
-    <style name="dynCalendar">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/text_color</item>
         <item name="android:layout_marginRight">18dip</item>
@@ -214,7 +202,7 @@
 <!-- needed?        <item name="android:layout_marginTop">0dip</item> !-->
     </style>
 
-	<style name="spinner" parent="@style/textView">
+    <style name="spinner" parent="@style/textView">
     </style>
 
 
