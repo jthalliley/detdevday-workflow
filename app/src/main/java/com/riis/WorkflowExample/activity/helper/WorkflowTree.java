@@ -1,5 +1,6 @@
 package com.riis.WorkflowExample.activity.helper;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.riis.WorkflowExample.R;
+import com.riis.WorkflowExample.toast.ToastUtil;
 import com.riis.common.rest.dto.WorkflowAttributeDto;
 import com.riis.common.rest.dto.WorkflowDto;
 import com.riis.common.rest.dto.WorkflowResponseDto;
@@ -154,8 +156,7 @@ public class WorkflowTree {
         final WorkflowDto    workflowDto) {
 
         final WorkflowTree result = new WorkflowTree();
-        final ViewGroup    layout =
-            (ViewGroup) layoutInflater.inflate(R.layout.dyn_toggle, null);
+        final ViewGroup    layout = (ViewGroup) layoutInflater.inflate(R.layout.dyn_toggle, null);
 
         result.workflow       = workflowDto;
         result.outerContainer = layout;
@@ -222,11 +223,23 @@ public class WorkflowTree {
         title = (TextView) layout.findViewById(R.id.dynTextTitle);
         title.setText(workflowDto.getLabel());
 
-        EditText answerWidget = (EditText) layout.findViewById(R.id.dynTextField);
+        final EditText answerWidget = (EditText) layout.findViewById(R.id.dynTextField);
 
-        String hint = workflowDto.findFirstAttribute(WorkflowAttributeDto.Keys.HINT);
-        hint = hint != null ? hint : ("Type " + workflowDto.getLabel() + " here");
-        answerWidget.setHint(hint);
+        final String hint = workflowDto.findFirstAttribute(WorkflowAttributeDto.Keys.HINT);
+        if (hint != null) {
+            answerWidget.setHint(hint);
+        }
+
+        final String regex = workflowDto.findFirstAttribute(WorkflowAttributeDto.Keys.TEXT_FIELD_VALIDATION_REGEX);
+        if (regex != null) {
+            answerWidget.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override public void onFocusChange(View v, boolean hasFocus) {
+                        String thisAnswer = answerWidget.getText().toString();
+                        if (!hasFocus && !thisAnswer.matches(regex))
+                            ToastUtil.show((Activity) v.getContext(), "Value " + thisAnswer + " does not match " + hint);
+                        }
+                });
+        }
 
         result.answerWidget = answerWidget;
 
@@ -306,15 +319,15 @@ public class WorkflowTree {
             int numberOfChildrenCompleted = 0;
             int numberOfChildren          = wt.children == null ? 0 : wt.children.size();
 
-            for (WorkflowTree childWt : wt.children) {
-                boolean childIsCompleted = isCompletedWorkflow(childWt);
-                numberOfChildrenCompleted += childIsCompleted ? 1 : 0;
+            if (wt.children != null) {
+                for (WorkflowTree childWt : wt.children) {
+                    boolean childIsCompleted = isCompletedWorkflow(childWt);
+                    numberOfChildrenCompleted += childIsCompleted ? 1 : 0;
+                }
             }
 
-            //do for all types?            if (wt.workflow.getDataType() == WorkflowDataType.MULTISELECT) {
             completed = (numberOfChildren == 0 && wt.hasAValue)
                 || (0 < numberOfChildren && 0 < numberOfChildrenCompleted);
-            //do for all types?            }
         }
 
         return completed;

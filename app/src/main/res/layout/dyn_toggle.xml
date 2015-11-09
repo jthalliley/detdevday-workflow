@@ -27,7 +27,7 @@
     <LinearLayout android:id="@+id/inner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="9dip"
+                android:layout_marginLeft="18dip"
                 android:layout_marginRight="9dip"
                 android:orientation="vertical"
                 >

@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="WorkflowExampleTheme"
+           parent="@android:style/Theme.Holo.Light.DarkActionBar"
+           >
+        <item name="android:editTextStyle">@style/AimEditTextStyle</item>
+    </style>
+
+    <style name="AimEditTextStyle" parent="@android:style/Widget.Holo.EditText"/>
+
 </resources>

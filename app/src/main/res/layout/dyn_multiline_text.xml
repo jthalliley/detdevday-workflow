@@ -1,71 +1,71 @@
 <LinearLayout android:id="@+id/dynMultiLineText"
-			xmlns:android="http://schemas.android.com/apk/res/android"
-			xmlns:tools="http://schemas.android.com/tools"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginLeft="9dip"
-			android:layout_marginRight="9dip"
-			android:orientation="vertical"
-			>
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dip"
+            android:layout_marginRight="9dip"
+            android:orientation="vertical"
+            >
 
-	<TextView android:id="@+id/dynTextSectionTitle"
-			  android:layout_width="wrap_content"
-			  android:layout_height="wrap_content"
-			  android:singleLine="true"
-			  android:text="@string/temp_dynMultiSelectTitle"
-			  style="@style/sectionHeader"
-			  />
+    <TextView android:id="@+id/dynTextSectionTitle"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:singleLine="true"
+              android:text="@string/temp_dynMultiSelectTitle"
+              style="@style/sectionHeader"
+              />
 
-	<include layout="@layout/separator"
-			 android:layout_width="match_parent"
-			 android:layout_height="wrap_content"
-			 />
+    <include layout="@layout/separator"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             />
 
-	<LinearLayout android:id="@+id/dynTextValue"
-				  android:layout_width="match_parent"
-				  android:layout_height="wrap_content"
-				  android:layout_marginLeft="9dip"
-				  android:layout_marginRight="9dip"
-				  android:orientation="horizontal"
-				  >
+    <LinearLayout android:id="@+id/dynTextValue"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="9dip"
+                  android:layout_marginRight="9dip"
+                  android:orientation="horizontal"
+                  >
 
-		<TextView android:id="@+id/dynTextTitle"
-				  android:layout_width="wrap_content"
-				  android:layout_height="wrap_content"
-				  android:layout_marginRight="3dip"
-				  android:singleLine="true"
-				  style="@style/dynTextTitle"
-				  android:text="@string/temp_dynTextTitle"
-				  />
-		
-		<EditText android:id="@+id/dynTextField"
-				  android:layout_width="fill_parent"
-				  android:layout_height="wrap_content"
-				  android:layout_marginTop="0dip"
-				  android:layout_gravity="start"
-				  style="@style/dynTextBox"
-				  android:hint="@string/temp_dynTextFieldHint"
-				  android:inputType="textMultiLine|textCapSentences|textAutoCorrect"
-				  android:singleLine="false"
-				  android:gravity="top|left" 
-				  android:scrollbars="vertical"
-				  android:minLines="4"
-				  android:maxLines="4"
-				  android:lines="4"
-				  android:maxLength="4096"
-				  android:maxWidth="400dip"
-				  android:minWidth="400dip"
-				  />
-		
-	</LinearLayout>
+        <TextView android:id="@+id/dynTextTitle"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="3dip"
+                  android:singleLine="true"
+                  style="@style/dynTextTitle"
+                  android:text="@string/temp_dynTextTitle"
+                  />
+        
+        <EditText android:id="@+id/dynTextField"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="0dip"
+                  android:layout_gravity="start"
+                  style="@style/dynTextBox"
+                  android:hint="@string/temp_dynTextFieldHint"
+                  android:inputType="textMultiLine|textCapSentences|textAutoCorrect"
+                  android:singleLine="false"
+                  android:gravity="top|left" 
+                  android:scrollbars="vertical"
+                  android:minLines="4"
+                  android:maxLines="4"
+                  android:lines="4"
+                  android:maxLength="4096"
+                  android:maxWidth="400dip"
+                  android:minWidth="400dip"
+                  />
+        
+    </LinearLayout>
 
-	<LinearLayout android:id="@+id/inner"
-				  android:layout_width="match_parent"
-				  android:layout_height="wrap_content"
-				  android:layout_marginLeft="9dip"
-				  android:layout_marginRight="9dip"
-				  android:orientation="vertical"
-				  >
-	</LinearLayout>
-	
+    <LinearLayout android:id="@+id/inner"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="18dip"
+                  android:layout_marginRight="9dip"
+                  android:orientation="vertical"
+                  >
+    </LinearLayout>
+    
 </LinearLayout>

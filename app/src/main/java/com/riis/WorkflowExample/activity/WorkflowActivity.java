@@ -6,8 +6,12 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,9 +36,7 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
 
     private static final String TAG = "WorkflowActivity";
 
-    @Bind(R.id.buttonMedicalHistory)  Button buttonMedicalHistory;
-    @Bind(R.id.buttonPersonalInfo)    Button buttonPersonalInfo;
-
+    @Bind(R.id.workflowChoice) Spinner      workflowChoice;
     @Bind(R.id.buttonComplete) Button       buttonComplete;
     @Bind(R.id.inner)          LinearLayout inner;
 
@@ -43,7 +45,8 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
     private WorkflowType      whichWorkflowIsDisplayed;
     private WorkflowTree      workflowTree;
 
-    private ProgressIndicator progressIndicator;
+    private ProgressIndicator          progressIndicator;
+    private ArrayAdapter<WorkflowType> workflowChoiceAdapter;
 
 
     @Override protected void onCreate(final Bundle savedInstanceState) {
@@ -55,20 +58,23 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
 
         presenter = new WorkflowPresenter(this);
 
-        //        ButtonUtils.setEnabled(false, buttonComplete);
-    }
+        workflowChoiceAdapter = new ArrayAdapter<WorkflowType>(this,
+                                                               android.R.layout.simple_spinner_item,
+                                                               WorkflowType.values());
+        workflowChoice.setAdapter(workflowChoiceAdapter);
 
-    @OnClick(R.id.buttonMedicalHistory) public void medicalHistoryOnClick() {
-        whichWorkflowIsDisplayed = WorkflowType.MEDICAL_HISTORY;
-        presenter.getWorkflow(whichWorkflowIsDisplayed);
-    }
+        workflowChoice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                    whichWorkflowIsDisplayed = WorkflowType.values()[pos];
+                    presenter.getWorkflow(whichWorkflowIsDisplayed);
+                }
 
-    @OnClick(R.id.buttonPersonalInfo) public void personalInfoOnClick() {
-        //TODO:        presenter.getWorkflow(WorkflowType.PERSONAL_INFO);
-        whichWorkflowIsDisplayed = WorkflowType.PERSONAL_INFO;
-        presenter.getWorkflow(whichWorkflowIsDisplayed);
-    }
+                @Override public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
 
+
+    }
 
     //-------------------------------------------------------
     // Dealing with the progress indicator...

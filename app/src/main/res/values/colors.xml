@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<color name="page_background">#FFFFFF</color>
-	
+    <color name="page_background">#FFFFFF</color>
+    
     <color name="separator_color">#25A5E1</color>
     <color name="muted_separator_color">#B3B3B3</color>
     <color name="full_separator_color">#000000</color>
@@ -20,18 +20,15 @@
     <color name="button_disabled_text_color">#FFFFFF</color>
     <color name="button_disabled_background_color">#95A5A6</color>
 
-    <color name="button_exception_text_color">#000000</color>
-    <color name="button_exception_background_color">#FD8608</color>
-    <color name="button_inStock_text_color">#FFFFFF</color>
-    <color name="button_inStock_background_color">#13910E</color>
-
+    <color name="complete_button_background_color">#13910E</color>
+    
     <color name="text_color">#000000</color>
     <color name="text_link_color">#2FA6DF</color>
 
     <color name="section_header_color">#2FA6DF</color>
     <color name="subsection_header_color">#141C5E</color>
 
-	<color name="category_text_color">#FFFFFF</color>
-	<color name="category_background_color">#000000</color>
+    <color name="category_text_color">#FFFFFF</color>
+    <color name="category_background_color">#000000</color>
 
 </resources>
