@@ -66,7 +66,11 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
         workflowChoice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                     whichWorkflowIsDisplayed = WorkflowType.values()[pos];
-                    presenter.getWorkflow(whichWorkflowIsDisplayed);
+                    if (whichWorkflowIsDisplayed == WorkflowType.SELECT_A_FORM) {
+                        inner.removeAllViews();
+                    } else {
+                        presenter.getWorkflow(whichWorkflowIsDisplayed);
+                    }
                 }
 
                 @Override public void onNothingSelected(AdapterView<?> parent) {

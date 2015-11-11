@@ -62,28 +62,16 @@
      !     SettingsActivity
      !============================================
      !-->
-    <string name="title_activity_settings">Settings</string>
-    <string name="apiSettingsTitle">API Settings</string>
-    <string name="apiURLPrefix">API URL:</string>
-    <string name="apiURLHttpsValuePrefix">HTTPS?</string>
-    <string name="temp_apiURLValue">http://10.5.1.104:8080</string>
-    <string name="apiNewHostPrefix">New Host:</string>
-    <string name="apiNewHostHint">hostname</string>
-    <string name="apiNewHostDescriptionHint">Description</string>
-    <string name="apiNewHostAdd">ADD</string>
     <string-array name="api_urls"> <!-- ZEROTH ELEMENT IS USED IN THIS APP !-->
-        <item>://192.168.1.66:8080</item> <!--    THalliley laptop via Halliley   !-->
-        <item>://10.5.2.28:8080</item>       <!-- THalliley laptop via RIIS Main  !-->
-        <item>://10.6.1.157:8080</item>      <!-- THalliley laptop via RIIS Guest !-->
+        <item>://192.168.1.66:8081</item> <!--    THalliley laptop via Halliley   !-->
+        <item>://10.5.2.28:8081</item>       <!-- THalliley laptop via RIIS Main  !-->
+        <item>://10.6.1.157:8081</item>      <!-- THalliley laptop via RIIS Guest !-->
     </string-array>
     
     <string-array name="api_urls_spinner">
-        <item>THalliley laptop via Halliley (home)</item>
-        <item>THalliley laptop via RIIS Main</item>
-        <item>THalliley laptop via RIIS Guest</item>
+        <item>foo</item>
+        <item>bar</item>
+        <item>baz</item>
     </string-array>
-
-    <string name="progressSettingsTitle">Please wait</string>
-    <string name="progressSettingsMsg">I\'m not a genie, you know ...</string>
 
 </resources>
