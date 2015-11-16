@@ -87,13 +87,8 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
         int titleId;
         int messageId;
 
-//        if (kind == ProgressIndicator.ProgressKind.GET_WORKFLOW) {
-            titleId   = R.string.progressFetchWorkflowTitle;
-            messageId = R.string.progressFetchWorkflowMessage;
-//        } else {
-//            titleId   = R.string.progressSaveWorkflowTitle;
-//            messageId = R.string.progressSaveWorkflowMessage;
-//        }
+        titleId   = R.string.progressFetchWorkflowTitle;
+        messageId = R.string.progressFetchWorkflowMessage;
 
         progressIndicator = new ProgressIndicator(this, titleId, messageId);
         progressIndicator.show();
@@ -106,12 +101,10 @@ public class WorkflowActivity extends Activity implements IWorkflowListener {
 
     @OnClick(R.id.buttonComplete) public void completeWorkflow() {
 
-        //DEBUG:                WorkflowTree.PrettyPrinter.print(workflowTree, 0);
+        WorkflowTree.PrettyPrinter.print(workflowTree, 0);
 
         WorkflowResponseDto response    = WorkflowTree.traverse(workflowTree);
         boolean             isCompleted = WorkflowTree.isCompletedWorkflow(workflowTree);
-
-        //DEBUG:                WorkflowTree.PrettyPrinter.print(workflowTree, 0);
 
         presenter.completeWorkflow(isCompleted, whichWorkflowIsDisplayed, response);
     }
